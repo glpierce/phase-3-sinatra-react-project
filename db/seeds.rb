@@ -74,7 +74,7 @@ Book.create(title: "Pale Blue Dot: A Vision of the Human Future in Space",
             description: "Pulitzer Prize-winning author Carl Sagan traces our exploration of space and suggests that our very survival may depend on the wise use of other worlds. This stirring book reveals how scientific discovery has altered our perception of who we are and where we stand, and challenges us to weigh what we will do with that knowledge.", 
             rating: 4.30,
             price: 4.50,
-            image: "https://images-na.ssl-images-amazon.com/images/I/91WuHblNkEL.jpg",
+            image: "https://m.media-amazon.com/images/I/51uklIvHaLL.jpg",
             total_quantity: 150,
             quantity_in_stock: 62,
             date_added: DateTime.new(2022, 1, 26, 1, 21, 19))
