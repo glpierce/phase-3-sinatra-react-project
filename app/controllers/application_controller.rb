@@ -13,24 +13,24 @@ class ApplicationController < Sinatra::Base
   end  
 
   get "/best_sellers" do
-    all = Book.all.order("quantity_in_stock / total_quantity ASC").limit(5)
-    nonfic = Book.find_by(genre: "Non-Fiction").order("quantity_in_stock / total_quantity ASC").limit(5)
-    fic = Book.all.where("genre IS NOT 'Non-Fiction'").order("quantity_in_stock / total_quantity ASC").limit(5)
-    return {all: all, non_fiction: nonfic, fiction: fic}
+    all = Book.select('*, (quantity_in_stock / total_quantity) as percent_in_stock').order(id: :desc).limit(5)
+    nonfic = Book.find_by(category: "Nonfiction").order(Arel.sql('quantity_in_stock / total_quantity ASC')).limit(5)
+    fic = Book.find_by(category: "Fiction").order(Arel.sql('quantity_in_stock / total_quantity ASC')).limit(5)
+    return {all: all, nonfiction: nonfic, fiction: fic}.to_json
   end
 
   get "/highest_rated" do
-    all = Book.all.order(rating: :desc).limit(5)
-    nonfic = Book.find_by(genre: "Non-Fiction").order(rating: :desc).limit(5)
-    fic = Book.all.where("genre IS NOT 'Non-Fiction'").order(rating: :desc).limit(5)
-    return {all: all, non_fiction: nonfic, fiction: fic}
+    all = Book.order(rating: :desc).limit(5)
+    nonfic = Book.find_by(category: "Nonfiction").order(rating: :desc).limit(5)
+    fic = Book.find_by(category: "Fiction").order(rating: :desc).limit(5)
+    return {all: all, nonfiction: nonfic, fiction: fic}.to_json
   end
 
   get "/new_releases" do
     all = Book.all.order(date_added: :desc).limit(5)
-    nonfic = Book.find_by(genre: "Non-Fiction").order(date_added: :desc).limit(5)
-    fic = Book.all.where("genre IS NOT 'Non-Fiction'").order(date_added: :desc).limit(5)
-    return {all: all, non_fiction: nonfic, fiction: fic}
+    nonfic = Book.find_by(category: "Nonfiction").order(date_added: :desc).limit(5)
+    fic = Book.find_by(category: "Fiction").order(date_added: :desc).limit(5)
+    return {all: all, nonfiction: nonfic, fiction: fic}.to_json
   end
 
 end
