@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2022_01_24_230332) do
     t.integer "total_quantity"
     t.integer "quantity_in_stock"
     t.datetime "date_added"
+    t.integer "discount"
   end
 
   create_table "rented_books", force: :cascade do |t|
