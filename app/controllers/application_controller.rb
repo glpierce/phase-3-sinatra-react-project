@@ -52,7 +52,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post "/search" do
-    results = Book.all.where("#{params[:searchBy]} = #{params[:query]}")
+    results = Book.all.where("#{params[:searchBy]} = '#{params[:query]}'")
     if !!results
       results_payload = results.map do |book|
         results_hash = book.attributes
