@@ -51,6 +51,13 @@ class ApplicationController < Sinatra::Base
     return {all: all, nonfiction: nonfic, fiction: fic}.to_json
   end
 
+  get "/deals" do
+    all = Book.all.where("discount > 0").order(discount: :desc).limit(5)
+    nonfic = Book.all.where("discount > ? AND category = ?", 0, "Nonfiction").order(discount: :desc).limit(5)
+    fic = Book.all.where("discount > ? AND category = ?", 0, "Fiction").order(discount: :desc).limit(5)
+    return {all: all, nonfiction: nonfic, fiction: fic}.to_json
+  end
+
   post "/search" do
     results = Book.all.where("#{params[:searchBy]} = '#{params[:query]}'")
     if !!results
