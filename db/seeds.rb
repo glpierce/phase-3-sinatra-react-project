@@ -17,7 +17,8 @@ Book.create(title: "The Fellowship of the Ring",
             image: "https://m.media-amazon.com/images/I/41kUPvqlguL.jpg",
             total_quantity: 250,
             quantity_in_stock: 42,
-            date_added: DateTime.new(2022, 1, 26, 1, 5, 12))
+            date_added: DateTime.new(2022, 1, 26, 1, 5, 12),
+            discount: 0)
 
 Book.create(title: "The Two Towers", 
             author: "J.R.R. Tolkien", 
@@ -29,7 +30,8 @@ Book.create(title: "The Two Towers",
             image: "https://m.media-amazon.com/images/I/4123zOAwAgL.jpg",
             total_quantity: 250,
             quantity_in_stock: 142,
-            date_added: DateTime.new(2022, 1, 26, 1, 6, 46))
+            date_added: DateTime.new(2022, 1, 26, 1, 6, 46),
+            discount: 0)
 
 Book.create(title: "The Return of the King", 
             author: "J.R.R. Tolkien", 
@@ -41,7 +43,8 @@ Book.create(title: "The Return of the King",
             image: "https://m.media-amazon.com/images/I/41KGl2FqeAL.jpg",
             total_quantity: 250,
             quantity_in_stock: 81,
-            date_added: DateTime.new(2022, 1, 26, 1, 6, 58))
+            date_added: DateTime.new(2022, 1, 26, 1, 6, 58),
+            discount: 0)
 
 Book.create(title: "The Hobbit, or There and Back Again", 
             author: "J.R.R. Tolkien", 
@@ -53,7 +56,8 @@ Book.create(title: "The Hobbit, or There and Back Again",
             image: "https://images-na.ssl-images-amazon.com/images/I/710+HcoP38L.jpg",
             total_quantity: 100,
             quantity_in_stock: 60,
-            date_added: DateTime.new(2022, 1, 26, 1, 7, 5))
+            date_added: DateTime.new(2022, 1, 26, 1, 7, 5),
+            discount: 25)
 
 Book.create(title: "Goodnight Moon", 
             author: "Margaret Wise Brown", 
@@ -61,11 +65,12 @@ Book.create(title: "Goodnight Moon",
             category: "Fiction", 
             description: "In a great green room, tucked away in bed, is a little bunny. 'Goodnight room, goodnight moon.' And to all the familiar things in the softly lit room -- to the picture of the three little bears sitting on chairs, to the clocks and his socks, to the mittens and the kittens, to everything one by one -- the little bunny says goodnight.\n\nIn this classic of children's literature, beloved by generations of readers and listeners, the quiet poetry of the words and the gentle, lulling illustrations combine to make a perfect book for the end of the day.", 
             rating: 4.29,
-            price: 2.25,
+            price: 10.10,
             image: "https://images-na.ssl-images-amazon.com/images/I/91WuHblNkEL.jpg",
             total_quantity: 150,
             quantity_in_stock: 57,
-            date_added: DateTime.new(2022, 1, 26, 1, 15, 38))
+            date_added: DateTime.new(2022, 1, 26, 1, 15, 38),
+            discount: 90)
 
 Book.create(title: "Pale Blue Dot: A Vision of the Human Future in Space", 
             author: "Carl Sagan, Ann Druyan", 
@@ -77,7 +82,8 @@ Book.create(title: "Pale Blue Dot: A Vision of the Human Future in Space",
             image: "https://m.media-amazon.com/images/I/51uklIvHaLL.jpg",
             total_quantity: 150,
             quantity_in_stock: 62,
-            date_added: DateTime.new(2022, 1, 26, 1, 21, 19))
+            date_added: DateTime.new(2022, 1, 26, 1, 21, 19),
+            discount: 0)
 
 Book.create(title: "Beyond Good & Evil: Prelude to a Philosophy of the Future", 
             author: "Friedrich Nietzsche", 
@@ -89,7 +95,8 @@ Book.create(title: "Beyond Good & Evil: Prelude to a Philosophy of the Future",
             image: "https://images-na.ssl-images-amazon.com/images/I/41ND61b-wqL._SX322_BO1,204,203,200_.jpg",
             total_quantity: 100,
             quantity_in_stock: 19,
-            date_added: DateTime.new(2022, 1, 26, 1, 26, 20))
+            date_added: DateTime.new(2022, 1, 26, 1, 26, 20),
+            discount: 0)
 
 Book.create(title: "For a New Liberty", 
             author: "Murray N. Rothbard", 
@@ -101,7 +108,8 @@ Book.create(title: "For a New Liberty",
             image: "https://images-na.ssl-images-amazon.com/images/I/41hHmHFnOGL._SX312_BO1,204,203,200_.jpg",
             total_quantity: 100,
             quantity_in_stock: 73,
-            date_added: DateTime.new(2022, 1, 26, 1, 31, 1))
+            date_added: DateTime.new(2022, 1, 26, 1, 31, 1),
+            discount: 0)
 
 Book.create(title: "A Brief History of Time", 
             author: "Stephen Hawking", 
@@ -113,7 +121,8 @@ Book.create(title: "A Brief History of Time",
             image: "https://images-na.ssl-images-amazon.com/images/I/A1xkFZX5k-L.jpg",
             total_quantity: 100,
             quantity_in_stock: 80,
-            date_added: DateTime.new(2022, 1, 26, 1, 42, 53))
+            date_added: DateTime.new(2022, 1, 26, 1, 42, 53),
+            discount: 20)
 
 Book.create(title: "The Code Book: The Science of Secrecy from Ancient Egypt to Quantum Cryptography", 
             author: "Simon Singh", 
@@ -125,7 +134,8 @@ Book.create(title: "The Code Book: The Science of Secrecy from Ancient Egypt to 
             image: "https://images-na.ssl-images-amazon.com/images/I/71fSWKBI1CL.jpg",
             total_quantity: 100,
             quantity_in_stock: 35,
-            date_added: DateTime.new(2022, 1, 26, 1, 47, 13))
+            date_added: DateTime.new(2022, 1, 26, 1, 47, 13),
+            discount: 0)
 
 
 

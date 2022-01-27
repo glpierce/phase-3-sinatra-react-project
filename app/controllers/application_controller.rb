@@ -51,6 +51,19 @@ class ApplicationController < Sinatra::Base
     return {all: all, nonfiction: nonfic, fiction: fic}.to_json
   end
 
+  get "/search" do
+    results = Book.all.where("#{params[:searchBy]} = #{params[:query]}")
+    if !!results
+      results_payload = results.map do |book|
+        results_hash = book.attributes
+        results_hash
+      end
+      return results_payload.to_json
+    else
+      return {error: "No search results"}.to_json
+    end
+  end
+
 end
 
 

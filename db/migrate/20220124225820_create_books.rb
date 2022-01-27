@@ -12,6 +12,7 @@ class CreateBooks < ActiveRecord::Migration[6.1]
       t.integer :total_quantity
       t.integer :quantity_in_stock
       t.datetime :date_added
+      t.integer :discount
     end
   end
 end
