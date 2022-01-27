@@ -53,28 +53,22 @@ class ApplicationController < Sinatra::Base
 
   get "/deals" do
     all = Book.all.where("discount > 0").order(discount: :desc).limit(5)
-    nonfic = Book.all.where("discount > ? AND category = ?", 0, "Fiction").order(discount: :desc).limit(5)
+    nonfic = Book.all.where("discount > ? AND category = ?", 0, "Nonfiction").order(discount: :desc).limit(5)
     fic = Book.all.where("discount > ? AND category = ?", 0, "Fiction").order(discount: :desc).limit(5)
     return {all: all, nonfiction: nonfic, fiction: fic}.to_json
   end
 
   post "/search" do
-    results = Book.all.where("#{params[:searchBy]} = '#{params[:query]}'")
-    if !!results
+    results = Book.all.where("#{params[:searchBy]} LIKE ?", "%#{params[:query]}%")
+    if !results.empty?
       results_payload = results.map do |book|
         results_hash = book.attributes
         results_hash
       end
       return results_payload.to_json
     else
-      return {error: "No search results"}.to_json
+      return ["No search results"].to_json
     end
   end
 
 end
-
-
-# all_array = Book.all.map do |book|
-#   book_hash = book.attributes
-#   book_hash[:total_quantity]
-# end
