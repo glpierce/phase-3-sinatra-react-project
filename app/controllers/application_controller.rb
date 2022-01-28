@@ -71,4 +71,24 @@ class ApplicationController < Sinatra::Base
     end
   end
 
+  post "/place_order" do 
+    new_rentals = params[:newRentals]
+    user_data = params[:userData]
+    created_rentals = new_rentals.map do |rental|
+      RentedBook.create(:book_id => rental[:id], :user_id => user_data[:id], :checkout_date => DateTime.now, :return_date => DateTime.now.next_day(30), :past_due => false)
+    end
+    new_rentals.each do |rental|
+      in_stock = Book.find(rental[:id]).quantity_in_stock
+      Book.update(rental[:id], :quantity_in_stock => (in_stock - 1))
+    end
+    return created_rentals.to_json
+  end
+
 end
+
+
+# t.datetime "checkout_date"
+#     t.datetime "return_date"
+#     t.boolean "past_due"
+#     t.integer "book_id"
+#     t.integer "user_id"
