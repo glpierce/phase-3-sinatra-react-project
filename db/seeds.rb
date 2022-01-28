@@ -4,6 +4,9 @@ puts "🌱 Seeding Initiated 🌱 "
 puts "Seeding users..."
 User.create(username: "Grant123", email: "grant123@gmail.com", address: "123 Grant Street, Granton, GR USA", name: "Grant Pierce", phone: "1231231231", password: "123Grant")
 User.create(username: "test", email: "test@gmail.com", address: "123 Test Street, Testford, TE USA", name: "Test", phone: "0000000000", password: "test")
+User.create(username: "Sofia13", email: "sofversoza@gmail.com", address: "666 Elm Street, 85254", name: "Sofia Versoza", phone: "6027846254", password: "sofia123")
+User.create(username: "Brooks88", email: "brooks12345@gmail.com", address: "5656 Springs Colorado", name: "Brooks", phone: "7327183638", password: "brooks123")
+User.create(username: "Gibson", email: "mgibson@gmail.com", address: "434 W 154th St", name: "Test", phone: "564783920", password: "password")
 
 
 puts "Seeding books..."
